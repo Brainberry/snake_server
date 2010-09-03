@@ -1,0 +1,18 @@
+= Snake Server
+
+== Gems
+
+More options - http://gembundler.com/bundle_install.html
+
+  bundle install --path vendor/bundle
+  bundle install --without development test
+
+== Start application
+  
+  thin --rackup config.ru start
+
+== Start workers
+  
+  COUNT=5 QUEUE=* rake resque:workers
+
+== Brainberry 2010
