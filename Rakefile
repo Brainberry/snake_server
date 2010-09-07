@@ -1,6 +1,6 @@
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../../lib'
+require File.expand_path('../lib/application', __FILE__)
+require 'rake'
 require 'resque/tasks'
-require 'lib/job'
 
 desc "Start the server using `rackup`"
 task :start do

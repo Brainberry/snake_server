@@ -28,7 +28,7 @@ module Snake
           @handler[issue.db_key] = issue.to_xml
         end
         
-        Resque.enqueue(Job, issue.db_key)
+        Resque.enqueue(Snake::Job, issue.db_key)
         
         render_xml("<issue><state>Created</state></issue>")
 	    rescue Errno::ECONNREFUSED
